@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Gannet Studio</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 720px; margin: 3rem auto; padding: 0 1rem; color: #1f2933; }
+    textarea { width: 100%; min-height: 8rem; font: inherit; padding: .5rem; }
+    button { font: inherit; padding: .6rem 1.4rem; margin-top: .75rem; }
+    ul { list-style: none; padding: 0; }
+    li { margin: .5rem 0; }
+    img { max-width: 100%; }
+  </style>
+</head>
+<body>
+  <h1>Gannet Studio</h1>
+  <p>Describe the poster you want. Generate runs the full generation and returns the finished image.</p>
+  <form method="post" action="/generate">
+    <textarea name="brief" placeholder="A launch poster for the harbour festival, deep blue, one bold line of text" required></textarea>
+    <br>
+    <button type="submit">Generate</button>
+  </form>
+  {% if posters %}
+  <h2>Recent posters</h2>
+  <ul>
+    {% for poster in posters %}
+    <li><a href="/posters/{{ poster.id }}.png">{{ poster.id }}</a> {{ poster.brief }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</body>
+</html>

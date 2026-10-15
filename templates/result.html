@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Gannet Studio</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 720px; margin: 3rem auto; padding: 0 1rem; color: #1f2933; }
+    img { max-width: 100%; border: 1px solid #d9e2ec; }
+  </style>
+</head>
+<body>
+  <h1>Your poster</h1>
+  <p>{{ brief }}</p>
+  <p>Generated in {{ steps }} passes.</p>
+  <img src="/posters/{{ poster_id }}.png" alt="poster {{ poster_id }}">
+  <p><a href="/">Make another</a></p>
+</body>
+</html>
